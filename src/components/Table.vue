@@ -28,27 +28,27 @@
           <div class="table-header-background"></div>
         </thead>
         <tbody class="table__body">
-        <tr v-for="item in allDate" :key="item.id" class="table__body-line">
+        <tr v-for="item in accessibleDate" :key="item.id" class="table__body-line">
           <td>
             <img class="table__body-logo" :src="item.company" alt="Лого">
           </td>
-          <td> <p class="table__body-border">{{ item.newApplications }}</p></td>
+          <td> <a href="" :class="{disable: item.newApplications === '0'}" class="table__body-border">{{ item.newApplications }}</a></td>
           <td>
             <div class="table__flex-body">
-              <p class="table__body-border">{{ item.preliminaryCurrent }}</p>
-              <p class="table__body-border">{{ item.preliminaryOverdue }}</p>
+              <a href="" :class="{disable: item.preliminaryCurrent === '0'}" class="table__body-border">{{ item.preliminaryCurrent }}</a>
+              <a href="" :class="{disable: item.preliminaryOverdue === '0'}" class="table__body-border">{{ item.preliminaryOverdue }}</a>
             </div>
           </td>
           <td>
             <div class="table__flex-body">
-              <p class="table__body-border">{{ item.periodicCurrent }}</p>
-              <p class="table__body-border">{{ item.periodicOverdue }}</p>
+              <a href="" :class="{disable: item.periodicCurrent === '0'}" class="table__body-border">{{ item.periodicCurrent }}</a>
+              <a href="" :class="{disable: item.periodicOverdue === '0'}" class="table__body-border">{{ item.periodicOverdue }}</a>
             </div>
           </td>
-          <td><p class="table__body-border">{{ item.vaccination }}</p></td>
-          <td><p class="table__body-border">{{ item.expiring }}</p></td>
-          <td><p class="table__body-border info">{{ item.employee }}</p></td>
-          <td><p class="table__body-border info">{{ item.completed }}</p></td>
+          <td><a href="" class="table__body-border">{{ item.vaccination }}</a></td>
+          <td><a href="" :class="{disable: item.expiring === '0'}" class="table__body-border">{{ item.expiring }}</a></td>
+          <td><p class="table__body-border-info">{{ item.employee }}</p></td>
+          <td><p class="table__body-border-info">{{ item.completed }}</p></td>
         </tr>
         </tbody>
       </table>
@@ -83,8 +83,36 @@ export default {
     async getIncidents () {
       this.allDate = await axios.get('http://localhost:3001/applications').then(res => res.data)
       if (this.role === 'role-one'){
+        this.accessibleDate = this.allDate
+      }
+      if (this.role === 'role-two'){
         this.accessibleDate = this.allDate.splice(3)
-        console.log(this.allDate.splice(3))
+      }
+      if (this.role === 'role-three'){
+        this.accessibleDate = this.allDate
+        this.accessibleDate.forEach((company)=>{
+          company.newApplications = ''
+          company.preliminaryOverdue = ''
+          company.periodicOverdue = ''
+          company.vaccination = ''
+          company.expiring = ''
+          company.employee = ''
+          company.completed = ''
+          company.newApplications = ''
+        })
+      }
+      if (this.role === 'role-four'){
+        this.accessibleDate = this.allDate.splice(3)
+        this.accessibleDate.forEach((company)=>{
+          company.newApplications = ''
+          company.preliminaryOverdue = ''
+          company.periodicOverdue = ''
+          company.vaccination = ''
+          company.expiring = ''
+          company.employee = ''
+          company.completed = ''
+          company.newApplications = ''
+        })
       }
     },
     getDate(){
@@ -137,6 +165,7 @@ export default {
     height: 100px;
   }
   &__body-border{
+    display: block;
     padding: 10px;
     background: #7A49A3;
     border-radius: 5px;
@@ -144,16 +173,19 @@ export default {
     width: fit-content;
     margin: 0 auto;
   }
-  & .info{
+  &__body-border-info{
     color: #322633;
     background: transparent;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
+    width: fit-content;
+    margin: 0 auto;
   }
   & .disable{
     background: #E2E2E2;
+    pointer-events: none;
   }
   &__body-logo{
     width: 95px;

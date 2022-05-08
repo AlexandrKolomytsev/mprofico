@@ -10,7 +10,6 @@
               <label class="text-field__label">Логин
                 <input v-model="login" class="text-field__input" id="login-input" type="text" name="login" placeholder="Login">
               </label>
-
               <label class="text-field__label">Пароль
                 <input v-model="password" class="text-field__input" :type="inputType" id="password-input" name="password" placeholder="Password" autocomplete="on">
                 <svg @mousedown="seePassword" @mouseup="hidePassword" class="text-field__input-see">
@@ -55,7 +54,6 @@ export default {
     authorization(){
       this.listUsers.forEach((user) =>{
         if (user.login === this.login && user.password === this.password){
-          console.log('ебать я зарегался')
           this.userData = {
             role: user.role,
             login: user.login,

@@ -26,15 +26,7 @@ import HeaderTab from "./HeaderTab";
 export default {
   name: "Header",
   components: {HeaderTab},
-  data(){
-    return{
-      raw: {}
-    }
-  },
   methods: {
-    getData(){
-
-    },
     logOut(){
       localStorage.removeItem('isAuth')
     }
