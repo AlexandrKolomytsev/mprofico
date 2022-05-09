@@ -43,9 +43,6 @@ export default {
       userData: {}
     }
   },
-  mounted() {
-    this.authorization()
-  },
   methods: {
     authorization(){
     axios
