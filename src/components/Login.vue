@@ -44,35 +44,39 @@ export default {
     }
   },
   mounted() {
-    this.getIncidents()
+    this.authorization()
   },
   methods: {
-    async getIncidents () {
-      this.listUsers = await axios.get('http://localhost:3001/users')
-          .then(res => res.data)
-    },
     authorization(){
-      this.listUsers.forEach((user) =>{
-        if (user.login === this.login && user.password === this.password){
-          this.userData = {
-            role: user.role,
-            login: user.login,
-            name: user.name,
-            lastName: user.lastName,
-            position: user.position
+    axios
+        .get('http://localhost:3001/users', {
+          params: {
+            login: this.login,
+            password: this.password
           }
-          localStorage.setItem('userData', JSON.stringify(this.userData))
-          this.isAuth = true
-          localStorage.setItem('isAuth', this.isAuth)
-          this.$router.replace( {path: '/'} );
-          return
-        }
-      })
-      if (!this.isAuth){
-        this.login = ''
-        this.password = ''
-        alert('Неправильный логин или пароль')
-      }
+        })
+        .then((res) => {
+          const data = res.data
+          if (data.length === 0){
+            this.login = ''
+            this.password = ''
+            alert('Неправильный логин или пароль')
+          } else {
+            let user = data[0]
+            this.userData = {
+              role: user.role,
+              login: user.login,
+              name: user.name,
+              lastName: user.lastName,
+              position: user.position
+            }
+            localStorage.setItem('userData', JSON.stringify(this.userData))
+            this.isAuth = true
+            localStorage.setItem('isAuth', this.isAuth)
+            this.$router.replace( {path: '/'} );
+            return
+          }
+        })
     },
     seePassword() {
       this.inputType = 'text'
