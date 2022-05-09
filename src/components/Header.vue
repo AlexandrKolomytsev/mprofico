@@ -28,6 +28,7 @@ export default {
   components: {HeaderTab},
   methods: {
     logOut(){
+      localStorage.removeItem('userData')
       localStorage.removeItem('isAuth')
     }
   }

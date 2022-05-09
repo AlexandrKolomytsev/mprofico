@@ -1,10 +1,10 @@
 {
   "applications": [
-    { "id": 1, "company": "/img/company-logo1.png", "newApplications": "1", "preliminaryCurrent": "1000", "preliminaryOverdue": "1000", "periodicCurrent": "1000", "periodicOverdue": "1000", "vaccination": "1", "expiring": "1","employee": "1000","completed": "3199"},
-    { "id": 2, "company": "/img/company-logo2.png", "newApplications": "0", "preliminaryCurrent": "1000", "preliminaryOverdue": "1000", "periodicCurrent": "1000", "periodicOverdue": "1000", "vaccination": "1", "expiring": "0","employee": "1000","completed": "3199"},
-    { "id": 3, "company": "/img/company-logo3.png", "newApplications": "6", "preliminaryCurrent": "0", "preliminaryOverdue": "1000", "periodicCurrent": "1000", "periodicOverdue": "0", "vaccination": "1", "expiring": "1","employee": "1000","completed": "5119"},
-    { "id": 4, "company": "/img/company-logo4.png", "newApplications": "65", "preliminaryCurrent": "340", "preliminaryOverdue": "1000", "periodicCurrent": "1000", "periodicOverdue": "1000", "vaccination": "1", "expiring": "0","employee": "1000","completed": "3139"},
-    { "id": 5, "company": "/img/company-logo5.png", "newApplications": "4", "preliminaryCurrent": "1050", "preliminaryOverdue": "3443", "periodicCurrent": "1000", "periodicOverdue": "1000", "vaccination": "1", "expiring": "6","employee": "1000","completed": "2199"}
+    { "id": 1, "company": "https://i.ibb.co/d6CdrHT/image-9.png", "newApplications": "1", "preliminaryCurrent": "1000", "preliminaryOverdue": "1000", "periodicCurrent": "1000", "periodicOverdue": "1000", "vaccination": "1", "expiring": "1","employee": "1000","completed": "3199"},
+    { "id": 2, "company": "https://i.ibb.co/c80W0Nz/image-8.png", "newApplications": "0", "preliminaryCurrent": "1000", "preliminaryOverdue": "1000", "periodicCurrent": "1000", "periodicOverdue": "1000", "vaccination": "1", "expiring": "0","employee": "1000","completed": "3199"},
+    { "id": 3, "company": "https://i.ibb.co/9t6yS79/10.png", "newApplications": "6", "preliminaryCurrent": "0", "preliminaryOverdue": "1000", "periodicCurrent": "1000", "periodicOverdue": "0", "vaccination": "1", "expiring": "1","employee": "1000","completed": "5119"},
+    { "id": 4, "company": "https://i.ibb.co/wyy8582/Glu-Mobile-logo-svg.png", "newApplications": "65", "preliminaryCurrent": "340", "preliminaryOverdue": "1000", "periodicCurrent": "1000", "periodicOverdue": "1000", "vaccination": "1", "expiring": "0","employee": "1000","completed": "3139"},
+    { "id": 5, "company": "https://i.ibb.co/y6ccG96/mobil-oil-logo-png-image-29.png", "newApplications": "4", "preliminaryCurrent": "1050", "preliminaryOverdue": "3443", "periodicCurrent": "1000", "periodicOverdue": "1000", "vaccination": "1", "expiring": "6","employee": "1000","completed": "2199"}
   ],
   "users": [
     { "id": 1, "role": "role-one", "login": "user1", "password": "user1", "name": "Александр", "lastName": "Иванов", "position": "Администротор" },

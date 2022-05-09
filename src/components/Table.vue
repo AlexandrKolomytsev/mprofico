@@ -53,13 +53,6 @@
         </tbody>
       </table>
     </div>
-    <div class="img-block">
-      <img src="@/assets/img/company-logo1.png" alt="Лого">
-      <img src="@/assets/img/company-logo2.png" alt="Лого">
-      <img src="@/assets/img/company-logo3.png" alt="Лого">
-      <img src="@/assets/img/company-logo4.png" alt="Лого">
-      <img src="@/assets/img/company-logo5.png" alt="Лого">
-    </div>
   </div>
 </template>
 
